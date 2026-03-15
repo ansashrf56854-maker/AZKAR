@@ -60,7 +60,43 @@
             <h2 style="color: var(--p);">📿 السبحة الإلكترونية</h2>
             <div class="card"><button class="sebha-btn" onclick="count()">0</button></div>
         </div>
-        <div id="lib" class="section"><div class="card" style="max-height: 400px; overflow-y: auto;">
+        <div id="lib" class="section"><div class="card" style="max-height: 400px; overflow-y: auto;"<div class="card">
+    <h4>📚 المكتبة الذكية</h4>
+    <div id="display-box" style="min-height: 100px; padding: 15px; background: #0d1117; border-radius: 10px; margin-bottom: 10px;">
+        اضغط على الأزرار بالأسفل لتظهر لك معلومة
+    </div>
+    <button onclick="getQuestion()" style="background: #58a6ff; font-size: 14px;">❓ سؤال عشوائي</button>
+    <button onclick="getHadith()" style="background: #238636; font-size: 14px;">📖 حديث عشوائي</button>
+</div>
+
+<script>
+    const questions = [
+        "س: من أول من أسلم من الصبيان؟ ج: علي بن أبي طالب",
+        "س: ما هي أطول سورة في القرآن؟ ج: سورة البقرة",
+        "س: كم عدد أجزاء القرآن؟ ج: 30 جزء",
+        "س: من هو كليم الله؟ ج: موسى عليه السلام",
+        "س: ما هي السورة التي تسمى عروس القرآن؟ ج: سورة الرحمن"
+        // هبعتلك باقي الـ 200 لو عايز تضيفهم هنا
+    ];
+
+    const ahadith = [
+        "قال ﷺ: 'إنما الأعمال بالنيات'",
+        "قال ﷺ: 'خيركم من تعلم القرآن وعلمه'",
+        "قال ﷺ: 'الدين النصيحة'",
+        "قال ﷺ: 'الطهور شطر الإيمان'",
+        "قال ﷺ: 'تبسمك في وجه أخيك صدقة'"
+    ];
+
+    function getQuestion() {
+        const rand = questions[Math.floor(Math.random() * questions.length)];
+        document.getElementById('display-box').innerText = rand;
+    }
+
+    function getHadith() {
+        const rand = ahadith[Math.floor(Math.random() * ahadith.length)];
+        document.getElementById('display-box').innerText = rand;
+    }
+</script>
     <h4>❓ بنك الأسئلة والأجوبة</h4>
     <p><b>1. س:</b> ما هي عاصمة الخلافة الإسلامية في عهد عمر بن الخطاب؟ <br> <b>ج:</b> المدينة المنورة.</p>
     <hr>
